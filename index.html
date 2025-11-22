@@ -1,127 +1,133 @@
-<!doctype html>
-<html lang="th">
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>นนท์ปวิธ — หน้าแนะนำตัว</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Web Application Portfolio - Cosmic Style</title>
   <style>
-    :root{
-      --bg1: linear-gradient(135deg,#ffb199 0%,#ffdd7e 35%,#9be7ff 100%);
-      --card: rgba(255,255,255,0.85);
-      --glass: rgba(255,255,255,0.6);
-      --accent1: #ff6b6b;
-      --accent2: #ffd93d;
-      --accent3: #61dafb;
-      --text: #0f172a;
+    body {
+      font-family: 'Verdana', sans-serif;
+      color: #E0E0FF;
+      background: radial-gradient(circle at top, #0b0c27, #1a1c40);
+      overflow-x: hidden;
+      margin: 0;
+      padding: 0 2rem;
     }
-    .dark{--card: rgba(10,10,20,0.45); --glass: rgba(20,20,30,0.6); --text: #f8fafc}
 
-    *{box-sizing:border-box}
-    html,body{height:100%;margin:0;font-family:Inter,system-ui,-apple-system,'Segoe UI',Roboto,'Helvetica Neue',Arial}
-    body{background:var(--bg1);color:var(--text);display:flex;align-items:center;justify-content:center;padding:32px}
+    h1, h2 {
+      text-align: center;
+      color: #ff99ff;
+      text-shadow: 0 0 10px #ff99ff, 0 0 20px #cc66ff;
+      margin-top: 1.5rem;
+    }
 
-    .container{width:100%;max-width:980px}
-    .card{background:var(--card);backdrop-filter:blur(6px);border-radius:20px;padding:28px;box-shadow:0 8px 30px rgba(16,24,40,0.12)}
+    p {
+      font-size: 1.2rem;
+      text-align: center;
+      color: #dcdcff;
+      text-shadow: 0 0 5px #fff;
+    }
 
-    .hero{display:flex;gap:24px;align-items:center;flex-wrap:wrap}
-    .avatar{width:120px;height:120px;border-radius:999px;background:linear-gradient(135deg,var(--accent1),var(--accent2),var(--accent3));display:flex;align-items:center;justify-content:center;color:white;font-weight:800;font-size:30px;box-shadow:0 6px 24px rgba(16,24,40,0.12)}
+    figure {
+      text-align: center;
+      margin: 2rem 0;
+    }
 
-    h1{margin:0;font-size:28px}
-    .muted{opacity:0.85}
+    figure img {
+      border: 3px solid #ff66ff;
+      border-radius: 15px;
+      box-shadow: 0 0 20px #ff66ff;
+      max-width: 60%;
+      height: 280px;
+      transition: transform 0.3s;
+    }
 
-    .actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:12px}
-    .btn{display:inline-flex;align-items:center;gap:10px;padding:10px 16px;border-radius:999px;font-weight:600;text-decoration:none;cursor:pointer;border:none}
-    .btn-ig{background:linear-gradient(90deg,#f09433,#e6683c 40%,#dc2743 60%,#cc2366 80%,#bc1888);color:#fff}
-    .btn-toggle{background:#fff;padding:8px;border-radius:10px;box-shadow:0 4px 14px rgba(16,24,40,0.08)}
+    figure img:hover {
+      transform: scale(1.05) rotate(2deg);
+    }
 
-    .meta{margin-top:8px;font-weight:600}
+    figcaption {
+      color: #c0c0ff;
+      font-style: italic;
+      margin-top: 0.5rem;
+    }
 
-    .section{margin-top:22px;display:flex;gap:18px;flex-wrap:wrap}
-    .col{flex:1;min-width:260px}
-    .small-card{background:var(--glass);padding:14px;border-radius:14px}
+    ul {
+      max-width: 500px;
+      margin: 0 auto 2rem;
+      list-style-type: square;
+      padding-left: 1.2rem;
+      color: #c0c0ff;
+    }
 
-    footer{margin-top:18px;text-align:center;opacity:0.9}
+    li {
+      margin-bottom: 0.5rem;
+    }
 
-    @media (max-width:640px){.hero{justify-content:center}.avatar{width:96px;height:96px;font-size:24px}}
+    .contact-container {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin-bottom: 3rem;
+    }
 
+    .contact img {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      border: 2px solid #ff66ff;
+      box-shadow: 0 0 15px #ff66ff;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .contact img:hover {
+      transform: rotate(15deg) scale(1.2);
+      box-shadow: 0 0 30px #ff33ff;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 200%;
+      height: 200%;
+      background: transparent url('https://www.transparenttextures.com/patterns/stardust.png') repeat;
+      opacity: 0.3;
+      pointer-events: none;
+      animation: starMove 200s linear infinite;
+    }
+
+    @keyframes starMove {
+      from { transform: translateX(0) translateY(0); }
+      to { transform: translateX(-50%) translateY(-50%); }
+    }
   </style>
 </head>
+
 <body>
-  <div class="container">
-    <div id="app" class="card">
-      <div class="hero">
-        <div class="avatar">นน</div>
-        <div style="flex:1;min-width:0;text-align:left">
-          <h1>นนท์ปวิธ กิจอรุณกูล</h1>
-          <div class="muted meta">รหัสนิสิต <strong>67024807</strong></div>
-          <div class="actions">
-            <a class="btn btn-ig" href="https://www.instagram.com/nonkitarunkool" target="_blank" rel="noopener noreferrer">
-              <!-- Instagram SVG -->
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="3" width="18" height="18" rx="5" stroke="white" stroke-width="1.4"/><path d="M12 7.5a4.5 4.5 0 100 9 4.5 4.5 0 000-9z" stroke="white" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M17.5 6.5h.01" stroke="white" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              ติดตามบน Instagram
-            </a>
+  <h1>Hello Professor Thammarat Thamma</h1>
+  <p>My name is <strong>Nonpawit Kitarunkool</strong>. I'm a Computer Science Student from 
+    <span style="color: #ff99ff;">University of Phayo</span> so you can also call me "Non"</p>
 
-            <button class="btn btn-toggle" id="themeToggle" title="Toggle theme">
-              <!-- Sun icon -->
-              <svg id="iconSun" width="18" height="18" viewBox="0 0 24 24" fill="none" style="display:inline-block"><path d="M12 3v2" stroke="#111" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 19v2" stroke="#111" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M4.22 4.22l1.42 1.42" stroke="#111" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M18.36 18.36l1.42 1.42" stroke="#111" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M1 12h2" stroke="#111" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M21 12h2" stroke="#111" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M4.22 19.78l1.42-1.42" stroke="#111" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M18.36 5.64l1.42-1.42" stroke="#111" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="12" r="3" stroke="#111" stroke-width="1.6"/></svg>
-              <span id="themeLabel">Light</span>
-            </button>
-          </div>
-        </div>
-      </div>
+  <figure>
+    <img src="Pixel/nonni.jpg" alt="My Picture">
+  </figure>
 
-      <div class="section">
-        <div class="col small-card">
-          <h3 style="margin:0 0 8px 0">เกี่ยวกับผม</h3>
-          <p class="muted" style="margin:0;line-height:1.5">สวัสดีครับ ผม นนท์ปวิธ ชอบพัฒนาเว็บไซต์ที่มีสีสันและใช้งานง่าย สนใจด้านการออกแบบ UI/UX และเทคโนโลยีเว็บสมัยใหม่</p>
-        </div>
+  <h2>More Details</h2>
+  <ul>
+    <li>Age: 20</li>
+    <li>Birthday: 23/07/2548</li>
+    <li>Blood Group: A</li>
+    <li>My hobbies: Play football</li>
+  </ul>
 
-        <div class="col small-card">
-          <h3 style="margin:0 0 8px 0">ติดต่อ</h3>
-          <p style="margin:0 0 8px 0">Instagram: <a href="https://www.instagram.com/nonkitarunkool" target="_blank">@nonkitarunkool</a></p>
-          <p style="margin:0;font-size:13px;opacity:0.9">ถ้าต้องการไฟล์ HTML นี้เป็นไฟล์เดียว ให้กดดาวน์โหลดหรือบันทึกหน้าเว็บเป็น <strong>index.html</strong></p>
-        </div>
-      </div>
-
-      <footer>
-        © <span id="year"></span> นนท์ปวิธ — สร้างด้วยสีสัน 🎨
-      </footer>
-    </div>
+  <h2>My Contact</h2>
+  <div class="contact-container">
+    <div class="contact"><a target="_blank" href="https://github.com/Nonpawit230748"><img src="Pixel/github-logo.png" alt="GitHub"></a></div>
+    <div class="contact"><a target="_blank" href="https://www.instagram.com/nonkitarunkool/"><img src="Pixel/Instagram_icon.png" alt="Instagram"></a></div>
   </div>
-
-  <script>
-    // Set year
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-    // Theme toggle (light/dark)
-    const app = document.documentElement;
-    const themeToggle = document.getElementById('themeToggle');
-    const themeLabel = document.getElementById('themeLabel');
-
-    function setDark(dark){
-      if(dark){
-        app.classList.add('dark');
-        themeLabel.textContent = 'Dark';
-      } else {
-        app.classList.remove('dark');
-        themeLabel.textContent = 'Light';
-      }
-    }
-
-    // initialize from prefers-color-scheme or localStorage
-    const saved = localStorage.getItem('site-theme');
-    if(saved){
-      setDark(saved === 'dark');
-    } else if(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches){
-      setDark(true);
-    }
-
-    themeToggle.addEventListener('click', ()=>{
-      const isDark = app.classList.toggle('dark');
-      localStorage.setItem('site-theme', isDark ? 'dark' : 'light');
-      setDark(isDark);
-    });
-  </script>
 </body>
+
 </html>
